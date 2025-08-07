@@ -1,0 +1,79 @@
+<!-- Estilos Uppy -->
+<link href="https://releases.transloadit.com/uppy/v3.25.2/uppy.min.css" rel="stylesheet">
+
+<!-- Scripts Uppy -->
+<script src="https://releases.transloadit.com/uppy/v3.25.2/uppy.min.js"></script>
+
+<form id="csrf_form" style="display: none">
+    {% csrf_token %}
+</form>
+
+
+<div class="main d-flex justify-content-center pt-1" style="background-color: rgb(235, 235, 235);">
+    <form class="card files-form bg-body-tertiary p-4 shadow"
+        style="width: 100%; max-width: 600px;background-color: rgb(235, 235, 235)">
+
+        <div class="text-center">
+            {% load static %}
+            <img src="{% static 'images/icone-sellers.png' %}" class="rounded" alt="Logo" width="128px" loading="lazy">
+            <h1>Validar Arquivos para Integração</h1>
+            <sub></sub>
+        </div>
+
+        <hr />
+
+        <div class="mb-3 fw-bold">
+            <label for="product-file" class="form-label">Produto*</label>
+            <input name="product" class="form-control border border-secondary-subtle shadow-sm" type="file" id="product-file" accept=".csv" required>
+        </div>
+
+        <div class="mb-3 fw-bold">
+            <label for="client-file" class="form-label">Cliente*</label>
+            <input name="customer" class="form-control border border-secondary-subtle shadow-sm" type="file" id="client-file" accept=".csv" required>
+        </div>
+
+        <div class="mb-3 fw-bold">
+            <label for="unit-measure-file" class="form-label">Unidade de medida</label>
+            <input name="unit_product" class="form-control border border-secondary-subtle shadow-sm" type="file" id="unit-measure-file" accept=".csv">
+        </div>
+
+        <div class="mb-3 fw-bold">
+            <label for="sale-file" class="form-label">Vendas*</label>
+            <input name="sale" class="form-control border border-secondary-subtle shadow-sm" type="file" id="sale-file" accept=".csv" required>
+        </div>
+
+        <div class="mb-3 fw-bold">
+            <label for="stock-file" class="form-label">Estoque*</label>
+            <input name="stock" class="form-control border border-secondary-subtle shadow-sm" type="file" id="stock-file" accept=".csv" required>
+        </div>
+
+        <div class="mb-3 fw-bold">
+            <label for="seller-file" class="form-label">Vendedor*</label>
+            <input name="seller" class="form-control border border-secondary-subtle shadow-sm" type="file" id="seller-file" accept=".csv" required>
+        </div>
+
+        <hr />
+
+        <div class="mb-3 fw-bold">
+            <label for="order-file" class="form-label">Pedido</label>
+            <input name="order" class="form-control border border-secondary-subtle shadow-sm" type="file" id="order-file" accept=".csv">
+        </div>
+
+
+        <div class="mb-3 fw-bold">
+            <label for="portifolio-file" class="form-label">Carteira do Cliente</label>
+            <input name="sellers_portfolio" class="form-control border border-secondary-subtle shadow-sm" type="file" id="portifolio-file" accept=".csv">
+        </div>
+
+
+        <div class="d-flex justify-content-center mt-2">
+            <button type="button" class="btn btn-primary" id="btn-validate">Validar</button>
+        </div>
+
+    </form>
+</div>
+
+
+
+
+<script src="{% static 'scripts/formData.js' %}"></script>
